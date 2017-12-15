@@ -1,0 +1,10 @@
+.DS_Store
+.idea
+.vscode
+Thumbs.db
+shared/yocto
+shared/rpi3-custom/build/cache
+shared/rpi3-custom/build/downloads
+shared/rpi3-custom/build/sstate-cache
+shared/rpi3-custom/build/tmp
+shared/rpi3-custom/build/*.log

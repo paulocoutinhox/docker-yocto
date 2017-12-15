@@ -1,0 +1,4 @@
+SANITY_VERSION 1
+TMPDIR /shared/rpi3-custom/build/tmp
+SSTATE_DIR /shared/rpi3-custom/build/sstate-cache
+NATIVELSBSTRING ubuntu-16.04
