@@ -7,7 +7,7 @@ help:
 	@echo "Type: make [rule]. Available options are:"
 	@echo ""
 	@echo "- help"
-	@echo "- build"
+	@echo "- build-docker-image"
 	@echo "- run cmd=\"ls -lah\""
 	@echo "- bash"
 	@echo "- get-yocto"
@@ -17,7 +17,7 @@ help:
 	@echo "- clean-all"
 	@echo ""
 
-build:
+build-docker-image:
 	docker build -t prsolucoes_yocto .
 
 run:
