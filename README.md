@@ -26,7 +26,10 @@ make build-rpi3
 The error when build using Yocto is:
 
 ```
-checking whether build environment is sane... configure: error: newly created file is older than distributed files!
+checking whether build environment is sane...  
+
+configure: error: newly created file is older than distributed files!  
+
 Check your system clock
 ```
 
