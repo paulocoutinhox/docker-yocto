@@ -4,8 +4,6 @@ This repository contains docker image for Yocto Project.
 
 ## How to use
 
-First of all, edit Dockerfile and put on enviroment variable TZ your host machine timezone, to avoid problems with system clock check of automake.  
-
 Build the docker image using:
 
 ```

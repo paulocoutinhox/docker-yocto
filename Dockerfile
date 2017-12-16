@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 
 ENV LOCALE=en_US.UTF-8
-ENV TZ=America/Sao_Paulo
+ENV TZ=Etc/UTC
 
 # Update Packages
 RUN apt-get update && apt-get -y upgrade
