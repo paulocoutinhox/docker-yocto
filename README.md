@@ -26,33 +26,30 @@ make build-rpi3
 The error when build using Yocto is:
 
 ```
-checking whether build environment is sane...  
-
-configure: error: newly created file is older than distributed files!  
-
-Check your system clock
+ automake-native-1.15.1-r1 do_fetch: Fetcher failure: Unable to find file file://remove_clock_check.patch anywhere. The paths that were searched were:
 ```
 
 The log of error is:
 
 ```
-DEBUG: Executing shell function autotools_preconfigure
-DEBUG: Shell function autotools_preconfigure finished
-DEBUG: Executing python function autotools_aclocals
-DEBUG: SITE files ['endian-little', 'common-linux', 'common-glibc', 'bit-64', 'x86_64-linux', 'common']
-DEBUG: Python function autotools_aclocals finished
-DEBUG: Executing shell function do_configure
-NOTE: Running ../automake-1.15.1/configure  --build=x86_64-linux 		  --host=x86_64-linux 		  --target=x86_64-linux 		  --prefix=/shared/rpi3-custom/build/tmp/work/x86_64-linux/automake-native/1.15.1-r0/recipe-sysroot-native/usr 		  --exec_prefix=/shared/rpi3-custom/build/tmp/work/x86_64-linux/automake-native/1.15.1-r0/recipe-sysroot-native/usr 		  --bindir=/shared/rpi3-custom/build/tmp/work/x86_64-linux/automake-native/1.15.1-r0/recipe-sysroot-native/usr/bin 		  --sbindir=/shared/rpi3-custom/build/tmp/work/x86_64-linux/automake-native/1.15.1-r0/recipe-sysroot-native/usr/sbin 		  --libexecdir=/shared/rpi3-custom/build/tmp/work/x86_64-linux/automake-native/1.15.1-r0/recipe-sysroot-native/usr/libexec 		  --datadir=/shared/rpi3-custom/build/tmp/work/x86_64-linux/automake-native/1.15.1-r0/recipe-sysroot-native/usr/share 		  --sysconfdir=/shared/rpi3-custom/build/tmp/work/x86_64-linux/automake-native/1.15.1-r0/recipe-sysroot-native/etc 		  --sharedstatedir=/shared/rpi3-custom/build/tmp/work/x86_64-linux/automake-native/1.15.1-r0/recipe-sysroot-native/com 		  --localstatedir=/shared/rpi3-custom/build/tmp/work/x86_64-linux/automake-native/1.15.1-r0/recipe-sysroot-native/var 		  --libdir=/shared/rpi3-custom/build/tmp/work/x86_64-linux/automake-native/1.15.1-r0/recipe-sysroot-native/usr/lib 		  --includedir=/shared/rpi3-custom/build/tmp/work/x86_64-linux/automake-native/1.15.1-r0/recipe-sysroot-native/usr/include 		  --oldincludedir=/shared/rpi3-custom/build/tmp/work/x86_64-linux/automake-native/1.15.1-r0/recipe-sysroot-native/usr/include 		  --infodir=/shared/rpi3-custom/build/tmp/work/x86_64-linux/automake-native/1.15.1-r0/recipe-sysroot-native/usr/share/info 		  --mandir=/shared/rpi3-custom/build/tmp/work/x86_64-linux/automake-native/1.15.1-r0/recipe-sysroot-native/usr/share/man 		  --disable-silent-rules 		  --disable-dependency-tracking 		    --disable-static  
-configure: WARNING: unrecognized options: --disable-dependency-tracking, --disable-static
-checking whether make supports nested variables... yes
-checking build system type... x86_64-pc-linux-gnu
-checking host system type... x86_64-pc-linux-gnu
-checking for a BSD-compatible install... /shared/rpi3-custom/build/tmp/hosttools/install -c
-checking whether build environment is sane... configure: error: newly created file is older than distributed files!
-Check your system clock
-NOTE: The following config.log files may provide further information.
-NOTE: /shared/rpi3-custom/build/tmp/work/x86_64-linux/automake-native/1.15.1-r0/build/config.log
-ERROR: configure failed
-WARNING: exit code 1 from a shell command.
-ERROR: Function failed: do_configure (log file is located at /shared/rpi3-custom/build/tmp/work/x86_64-linux/automake-native/1.15.1-r0/temp/log.do_configure.12548)
+NOTE: Executing RunQueue Tasks
+WARNING: automake-native-1.15.1-r1 do_fetch: Failed to fetch URL file://remove_clock_check.patch, attempting MIRRORS if available
+ERROR: automake-native-1.15.1-r1 do_fetch: Fetcher failure: Unable to find file file://remove_clock_check.patch anywhere. The paths that were searched were:
+    /shared/yocto/poky/meta/recipes-devtools/automake/automake-1.15.1/poky
+    /shared/yocto/poky/meta/recipes-devtools/automake/automake/poky
+    /shared/yocto/poky/meta/recipes-devtools/automake/files/poky
+    /shared/yocto/poky/meta/recipes-devtools/automake/automake-1.15.1/
+    /shared/yocto/poky/meta/recipes-devtools/automake/automake/
+    /shared/yocto/poky/meta/recipes-devtools/automake/files/
+    /shared/yocto/poky/meta/recipes-devtools/automake/automake-1.15.1/x86-64
+    /shared/yocto/poky/meta/recipes-devtools/automake/automake/x86-64
+    /shared/yocto/poky/meta/recipes-devtools/automake/files/x86-64
+    /shared/yocto/poky/meta/recipes-devtools/automake/automake-1.15.1/
+    /shared/yocto/poky/meta/recipes-devtools/automake/automake/
+    /shared/yocto/poky/meta/recipes-devtools/automake/files/
+    /shared/rpi3-custom/build/downloads
+ERROR: automake-native-1.15.1-r1 do_fetch: Fetcher failure for URL: 'file://remove_clock_check.patch'. Unable to fetch URL from any source.
+ERROR: automake-native-1.15.1-r1 do_fetch: Function failed: base_do_fetch
+ERROR: Logfile of failure stored in: /shared/rpi3-custom/build/tmp/work/x86_64-linux/automake-native/1.15.1-r1/temp/log.do_fetch.690
+ERROR: Task (virtual:native:/shared/yocto/poky/meta/recipes-devtools/automake/automake_1.15.1.bb:do_fetch) failed with exit code '1'
 ```
