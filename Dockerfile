@@ -15,8 +15,8 @@ RUN apt-get install -y gawk wget git-core diffstat unzip texinfo gcc-multilib \
      build-essential chrpath socat cpio python python3 python3-pip python3-pexpect \
      xz-utils debianutils iputils-ping
 
-# Additional host packages required by poky/scripts/wic
-RUN apt-get install -y curl dosfstools mtools parted syslinux tree
+# Additional host packages required by poky/scripts/wic/quilt
+RUN apt-get install -y curl dosfstools mtools parted syslinux tree quilt
 
 # Fix error "Please use a locale setting which supports utf-8."
 # See https://wiki.yoctoproject.org/wiki/TipsAndTricks/ResolvingLocaleIssues
