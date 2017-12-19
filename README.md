@@ -26,30 +26,38 @@ make build-rpi3
 The error when build using Yocto is:
 
 ```
- automake-native-1.15.1-r1 do_fetch: Fetcher failure: Unable to find file file://remove_clock_check.patch anywhere. The paths that were searched were:
+Applying patch remove_clock_check.patch
+can't find file to patch at input line 5
+Perhaps you used the wrong -p or --strip option?
+The text leading up to this was:
+--------------------------
+|Index: automake-1.15.1/configure
+|===================================================================
+|--- automake-1.15.1.orig/configure
+|+++ automake-1.15.1/configure
+--------------------------
+No file to patch.  Skipping patch.
 ```
 
 The log of error is:
 
 ```
 NOTE: Executing RunQueue Tasks
-WARNING: automake-native-1.15.1-r1 do_fetch: Failed to fetch URL file://remove_clock_check.patch, attempting MIRRORS if available
-ERROR: automake-native-1.15.1-r1 do_fetch: Fetcher failure: Unable to find file file://remove_clock_check.patch anywhere. The paths that were searched were:
-    /shared/yocto/poky/meta/recipes-devtools/automake/automake-1.15.1/poky
-    /shared/yocto/poky/meta/recipes-devtools/automake/automake/poky
-    /shared/yocto/poky/meta/recipes-devtools/automake/files/poky
-    /shared/yocto/poky/meta/recipes-devtools/automake/automake-1.15.1/
-    /shared/yocto/poky/meta/recipes-devtools/automake/automake/
-    /shared/yocto/poky/meta/recipes-devtools/automake/files/
-    /shared/yocto/poky/meta/recipes-devtools/automake/automake-1.15.1/x86-64
-    /shared/yocto/poky/meta/recipes-devtools/automake/automake/x86-64
-    /shared/yocto/poky/meta/recipes-devtools/automake/files/x86-64
-    /shared/yocto/poky/meta/recipes-devtools/automake/automake-1.15.1/
-    /shared/yocto/poky/meta/recipes-devtools/automake/automake/
-    /shared/yocto/poky/meta/recipes-devtools/automake/files/
-    /shared/rpi3-custom/build/downloads
-ERROR: automake-native-1.15.1-r1 do_fetch: Fetcher failure for URL: 'file://remove_clock_check.patch'. Unable to fetch URL from any source.
-ERROR: automake-native-1.15.1-r1 do_fetch: Function failed: base_do_fetch
-ERROR: Logfile of failure stored in: /shared/rpi3-custom/build/tmp/work/x86_64-linux/automake-native/1.15.1-r1/temp/log.do_fetch.690
-ERROR: Task (virtual:native:/shared/yocto/poky/meta/recipes-devtools/automake/automake_1.15.1.bb:do_fetch) failed with exit code '1'
+ERROR: automake-native-1.15.1-r1 do_patch: Command Error: 'quilt --quiltrc /shared/rpi3-custom/build/tmp/work/x86_64-linux/automake-native/1.15.1-r1/recipe-sysroot-native/etc/quiltrc push' exited with 0  Output:
+Applying patch remove_clock_check.patch
+can't find file to patch at input line 5
+Perhaps you used the wrong -p or --strip option?
+The text leading up to this was:
+--------------------------
+|Index: automake-1.15.1/configure
+|===================================================================
+|--- automake-1.15.1.orig/configure
+|+++ automake-1.15.1/configure
+--------------------------
+No file to patch.  Skipping patch.
+1 out of 1 hunk ignored
+Patch remove_clock_check.patch does not apply (enforce with -f)
+ERROR: automake-native-1.15.1-r1 do_patch: Function failed: patch_do_patch
+ERROR: Logfile of failure stored in: /shared/rpi3-custom/build/tmp/work/x86_64-linux/automake-native/1.15.1-r1/temp/log.do_patch.111
+ERROR: Task (virtual:native:/shared/yocto/poky/meta/recipes-devtools/automake/automake_1.15.1.bb:do_patch) failed with exit code '1'
 ```
